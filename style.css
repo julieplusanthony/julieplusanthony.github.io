@@ -172,17 +172,18 @@ nav li a, nav li a:active, nav li a:hover, nav li a:visited { color: #D0021B; }
 }
 
 .card .head, .card .head-big {
-	padding: 10em 0 .25em 1em;
+	padding: 10em 1em .25em 1em;
     background: center center no-repeat;
     background-size: cover;
     color: #fcfcfc;
 }
 
 .card .head h3 { font-size: 2.5em; }
-.card .head h4, .card .body h4 { font-size: 1.25em; font-style: italic; }
+.card .head h4, .card .body h4 { font-size: 1.75em; font-style: italic; }
 
 .card .head-big { padding: 12.5em 5em 1.5em 5em; margin: 0 -15px; }
-.card .body { min-height: 10em; }
+.card .body { min-height: 17m; padding: .5em 1em; }
+.card .body p { font-size: 1.25em; text-align: justify; }
 
 @media (max-width: 768px) {
 	.card .head-big { padding: 12.5em 1.5em 1.5em 1.5em; }
