@@ -12,6 +12,19 @@ body { background-color: #fcfcfc; color: #333; font-family: Print, 'Open Sans', 
 .cursive { font-family: Notera, "Playfair Display", serif; }
 h2, h3, h4, h5 { font-family: Print, 'Open Sans', sans-serif; }
 
+.separator {
+	background: #B61629;
+	color: white;
+	font-weight: bold;
+	box-shadow: inset 0 15px 30px -10px #770922, inset 0 -15px 30px -10px #770922;
+	border-top: 1px solid #770922;
+	border-bottom: 1px solid #770922;
+}
+
+.separator h2 {
+    margin: 50px 0;
+}
+
 /*
  
 	SPLASH
@@ -24,6 +37,7 @@ header {
 				bottom 150px right 50px no-repeat url(splash-2.png);
 
 	height: 90vh;
+	padding-top: 20px;
 }
 
 header h1 { font-size: 3em; }
@@ -33,7 +47,7 @@ header h1 { font-size: 3em; }
 	header h1.cursive { padding-top: 0px; }
 }
 
-header h1.cursive { padding-top: 1.5em; font-size: 5em; }
+header h1.cursive { padding-top: 1em; font-size: 5em; }
 header h2 { font-size: 2em; margin: 2em 0; }
 
 header > a, header > a:hover, header > a:active, header > a:visited, header > a:link {
@@ -53,7 +67,6 @@ header > a, header > a:hover, header > a:active, header > a:visited, header > a:
 
 nav {
 	color: #D0021B;
-    float: left;
     font-family: Print, 'Open Sans', sans-serif;
     width: 100%;
 }
@@ -61,7 +74,7 @@ nav {
 header nav { opacity: .3; transition: all .3s; }
 header nav:hover { opacity: 1; }
 
-nav ul { padding: 0; }
+nav ul { padding: 0; margin: 0;}
 
 nav li {
     list-style: none;
@@ -72,11 +85,6 @@ nav li {
 }
 
 nav li a, nav li a:active, nav li a:hover, nav li a:visited { color: #D0021B; }
-
-.container-fluid > nav {
-	padding: 1.5em 0;
-	width: 100%;
-}
 
 /*
 
@@ -98,13 +106,14 @@ nav li a, nav li a:active, nav li a:hover, nav li a:visited { color: #D0021B; }
 	SPOUSES
 
 */
+.container-fluid > nav { padding-top: 1.5em; width: 100%; }
 
-#spouses .text { padding: 0 50px;}
+#spouses .text { padding: 0 50px; }
 
-#spouses .julie .text h2::before {
+/*#spouses .julie .text h2::before {
 	background-image: url(fiancee.png);
-	/*-webkit-background-size: 30px 20px;*/
-	/*background-size: 30px 20px;*/
+	-webkit-background-size: 30px 20px;
+	background-size: 30px 20px;
     position: relative;
     left: -30px;
     top: 5px;
@@ -121,7 +130,7 @@ nav li a, nav li a:active, nav li a:hover, nav li a:visited { color: #D0021B; }
     top: 5px;
     height: 10px;
     width: 30px;
-}
+}*/
 
 #spouses .text p { line-height: 1.3em; font-size: 1.3em; }
 
@@ -140,21 +149,40 @@ nav li a, nav li a:active, nav li a:hover, nav li a:visited { color: #D0021B; }
     background-size: cover;
 }
 
-.card .head, .card .head-big {
-	padding-top: 10em;
-    background: left top no-repeat;
-    background-size: cover;
-    color: #fcfcfc;
-}
-
 /*
 
 	SUITE
 
 */
 
-.card { box-shadow: rgba(0,0,0,.5) 0 0 10px; border: solid 1px rgba(0,0,0,.15); }
+@media (min-width: 1200px) {
+	.container {
+		width: 1000px;
+	}
+}
+
+#cards {
+	padding : 50px 0;
+}
+
+.card {
+	box-shadow: #999 0 5px 10px;
+	border-bottom: 5px solid #B61629;
+	margin: 25px 0;
+}
+
+.card .head, .card .head-big {
+	padding: 10em 0 .25em 1em;
+    background: center center no-repeat;
+    background-size: cover;
+    color: #fcfcfc;
+}
+
+.card .head h3 { font-size: 2.5em; }
+.card .head h4 { font-size: 1.25em; }
+
 .card .head-big { padding: 12.5em 5em 1.5em 5em; margin: 0 -15px; }
+.card .body { min-height: 10em; }
 
 @media (max-width: 768px) {
 	.card .head-big { padding: 12.5em 1.5em 1.5em 1.5em; }
