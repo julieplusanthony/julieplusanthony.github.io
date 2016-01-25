@@ -80,10 +80,11 @@ nav li {
     list-style: none;
     display: inline-block;
     width:7.5em;
-    height: 2.5em;
+    /*height: 2.5em;*/
     font-size: 1.7em;
 }
 
+nav li img { margin-top: -8px; }
 nav li a, nav li a:active, nav li a:hover, nav li a:visited { color: #D0021B; }
 
 /*
@@ -106,7 +107,7 @@ nav li a, nav li a:active, nav li a:hover, nav li a:visited { color: #D0021B; }
 	SPOUSES
 
 */
-.container-fluid > nav { padding-top: 1.5em; width: 100%; }
+body > nav { padding-top: 1.5em; width: 100%; }
 
 #spouses .text { padding: 0 50px; }
 
