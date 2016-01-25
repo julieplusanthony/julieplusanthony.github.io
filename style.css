@@ -85,7 +85,14 @@ nav li {
 }
 
 nav li img { margin-top: -8px; }
-nav li a, nav li a:active, nav li a:hover, nav li a:visited { color: #D0021B; }
+nav li a, nav li a:active, nav li a:hover, nav li a:visited {
+	color: #D0021B;
+	text-decoration: none;
+	transition: all .3s;
+	padding: 5px 10px;
+    border-radius: 3px;
+}
+nav li a:hover { background-color: #D0021B; color: white; }
 
 /*
 
