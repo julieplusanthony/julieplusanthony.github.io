@@ -8,6 +8,9 @@
 	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
 	<link href='https://fonts.googleapis.com/css?family=Playfair+Display:400,700' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" type="text/css" href="sweet-alert.css">
+
+	<script src="sweet-alert.min.js"></script>
 </head>
 <body>
 <div class="container-fluid">
@@ -30,19 +33,16 @@
 
 	<div id="rings" class="row"></div>
 
-</div>
+	<nav id="nav" class="text-center hidden-xs">
+		<ul>
+			<li><a href="#spouses">Les Fiancés</a></li>
+			<li><a href="#slideshow">Photos</a></li>
+			<li><img src="logo.png" height="30" width="105"></li>
+			<li><a href="#cards">La Suite</a></li>
+			<li><a href="#access">Infos Pratiques</a></li>
+		</ul>
+	</nav>
 
-<nav class="navbar text-center hidden-xs navbar-static-top">
-	<ul class="container-fluid">
-		<li><a href="#spouses">Les Fiancés</a></li>
-		<li><a href="#slideshow">Photos</a></li>
-		<li><img src="logo.png" height="30" width="105"></li>
-		<li><a href="#cards">La Suite</a></li>
-		<li><a href="#access">Infos Pratiques</a></li>
-	</ul>
-</nav>
-
-<div class="container-fluid">
 	<div class="row separator text-center">
 		<h2>Les Fiancés</h2>
 	</div>
@@ -298,9 +298,32 @@
 		</div>
 	</div>
 
-	<div class="row separator text-center">
+	<div id="rsvp" class="row separator text-center">
 		<h2>RSVP</h2>
+		<form class="form-horizontal" action="https://script.google.com/macros/s/AKfycbyn4E7CZ_VAKKOqc-472ZQBk4r23PsIBibusnvmPgPdq_U6Hexp/exec">
+				<div class="col-xs-8 col-xs-offset-2 col-sm-6 col-sm-offset-3">
+					<label class="sr-only" for="nom">Nom</label>
+					<input type="text" class="form-control" id="nom" placeholder="Nom">
+				</div>
+				<div class="col-xs-8 col-xs-offset-2 col-sm-6 col-sm-offset-3">
+					<label class="sr-only" for="personnes">Nombre de personnes</label>
+					<input type="text" class="form-control" id="personnes" placeholder="Nombre de personnes">
+				</div>
+				<div class="col-xs-8 col-xs-offset-2 col-sm-6 col-sm-offset-3">
+					<label class="sr-only" for="commentaires">Commentaires</label>
+					<input type="text" class="form-control" id="commentaires" placeholder="Commentaires">
+				</div>
+				<div class="col-xs-8 col-xs-offset-2 col-sm-6 col-sm-offset-3">
+					<button type="submit" id="signup" class="btn btn-default form-signup">Envoyer</button>
+				</div>
+		</form>
 	</div>
+
+	<footer class="row">
+		<p class="text-center">Julie et Anthony se marrient ce samedi 16 Avril 2016!<br>
+		<small>Made with &lt;3 by Biggie</small>
+		</p>
+	</footer>
 
 <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
@@ -325,6 +348,29 @@
 			map: map,
 			title: 'Snazzy!'
 		});
+
+		// $('#nav').affix({
+		// 	offset: { top: $('#nav').offset().top }
+		// });
+
+		$('form').submit(function(e) {
+			e.preventDefault();
+			var nom = $(this).find('#nom').val(),
+				personnes = $(this).find('#personnes').val(),
+				commentaires = $(this).find('#commentaires').val();
+			$(this).find('.form-signup').attr('disabled', 'disabled');
+
+			$.post('https://script.google.com/macros/s/AKfycbyn4E7CZ_VAKKOqc-472ZQBk4r23PsIBibusnvmPgPdq_U6Hexp/exec', {
+				nom: nom,
+				personnes: personnes,
+				commentaires: commentaires
+				}
+		  	).always(function() {
+		  		swal("Merci!", "Merci de répondre présent, nous nous faisons dores et déjà une joie de vous voir ce samedi 16 Avril.", "success");
+				$('#signup').removeAttr('disabled');
+		  	});
+		});
+
 	}
 </script>
 
