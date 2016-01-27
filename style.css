@@ -117,7 +117,7 @@ nav li a:hover { background-color: #D0021B; color: white; }
 */
 #nav { width: 100%; padding: 20px 0}
 
-#spouses .text { padding: 0 50px; }
+.spouses .text { padding: 0 50px; }
 
 /*#spouses .julie .text h2::before {
 	background-image: url(fiancee.png);
@@ -141,12 +141,12 @@ nav li a:hover { background-color: #D0021B; color: white; }
     width: 30px;
 }*/
 
-#spouses .text p { line-height: 1.3em; font-size: 1.3em; }
+.spouses .text p { line-height: 1.3em; font-size: 1.3em; }
 
 .photo {
 	margin: 0;
 	padding: 0;
-	height: 25em;
+	height: 27em;
 }
 .anthony .photo {
     background: center right no-repeat url(anthony.jpg);
@@ -156,6 +156,33 @@ nav li a:hover { background-color: #D0021B; color: white; }
 .julie .photo {
     background: center left no-repeat url(julie.jpg);
     background-size: cover;
+}
+
+/*
+
+	PHOTOS
+
+*/
+
+#slideshow .carousel-inner > .item > img {
+    margin: 75px auto;
+    border: 10px solid white;
+    outline: 1px solid #cecece; 
+    box-shadow: 0 5px 15px #ccc;
+}
+
+#slideshow .carousel-indicators li {
+	background-color: white;
+	border: 1px solid #770922;
+}
+
+#slideshow .carousel-indicators li.active {
+	background-color: #B61629;
+	border: #770922;
+}
+
+#slideshow .carousel-control {
+	background-image: none;
 }
 
 /*
