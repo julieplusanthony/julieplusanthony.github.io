@@ -299,12 +299,9 @@ nav li a:hover { background-color: #D0021B; color: white; }
 
 */
 
-.access {
-}
-
-.access #map {
-	min-height: 40em;
-}
+.access #map { min-height: 30em; }
+.access.row .row { padding: 20px 15px; }
+.access p { font-size: 1.25em; }
 
 
 /*
