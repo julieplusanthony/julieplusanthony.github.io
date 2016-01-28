@@ -221,8 +221,13 @@ nav li a:hover { background-color: #D0021B; color: white; }
 .card .head h4, .card .body h4 { font-size: 1.75em; font-style: italic; }
 
 .card .head-big { padding: 12.5em 5em 1.5em 5em; margin: 0 -15px; }
-.card .body { min-height: 17em; padding: .5em 1em; }
+.card .body { padding: .5em 1em; }
 .card .body p { font-size: 1.25em; text-align: justify; }
+
+@media (min-width: 768px) {
+	.card .body { min-height: 17em; }
+	.card .body.body-big { min-height: 23em; }
+}
 
 @media (max-width: 768px) {
 	.card .head-big { padding: 12.5em 1.5em 1.5em 1.5em; }
@@ -300,6 +305,20 @@ nav li a:hover { background-color: #D0021B; color: white; }
 */
 
 .access #map { min-height: 30em; }
+.access .map {
+	min-height: 40em;
+	background: center left no-repeat url(ferme.jpg);
+    background-size: cover;
+}
+
+.access li {
+    font-size: 1.25em;
+    list-style-type: circle;
+    margin-top: 15px;
+    color: #999;
+}
+
+.access li b, .access li em { color: #333; }
 .access.row .row { padding: 20px 15px; }
 .access p { font-size: 1.25em; }
 
