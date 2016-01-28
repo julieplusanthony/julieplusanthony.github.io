@@ -37,7 +37,7 @@ header {
 	background: bottom 35px left 30px no-repeat url(splash-1.png),
 				bottom 150px right 50px no-repeat url(splash-2.png);
 
-	height: 90vh;
+	height: 100vh;
 	padding-top: 20px;
 }
 
@@ -186,6 +186,10 @@ nav li a:hover { background-color: #D0021B; color: white; }
 	background-image: none;
 }
 
+#slideshow .carousel-control span {
+	color: #B61629;
+}
+
 /*
 
 	SUITE
@@ -309,11 +313,10 @@ nav li a:hover { background-color: #D0021B; color: white; }
 
 */
 
-#rsvp.separator h2 {
-	margin-bottom: 50px;
-}
-
-#rsvp input { margin-bottom: 25px; }
+#rsvp { height: 95vh; }
+#rsvp.separator h2 { margin-bottom: 50px; }
+#rsvp input, #rsvp textarea, #rsvp button { margin-bottom: 25px; }
+#rsvp label { padding-left: 10px; font-size: 2em; }
 
 /*
 
